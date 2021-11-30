@@ -1,65 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
         <title>Contact Page</title>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <div class="container">
-            <div class="contactinfo">
-                <div>
-                    <h2>Contact Page</h2>
-                    <ul class="info">
-                        <li>
-                            <span><img src="images/background.jpg"></span>
-                            <span>0042 Thika Road<br>
-                                Nairobi, Kenya<br>
-                                000564</span>
-                
-                        </li>
-                        <li>
-                            <span><img src="mail.jpg"></span>
-                            <span>faithagnes2@gmail.com</span>
+            <header>
+                <h2>Contact Us</h2>
+                <p>
+                    Would you wish to get in touch or give your comments, kindly follow the prompts and we'll get back to you inn a few.Thanks, Management.
+                </p>
+            </header>
+            <div class="content">
+                <div class="container-form">
+                    <section>
+                        <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                        <h2>address</h2>
+                        <p>Would you wish to get in touch or give your comments, <br>
+                           kindly follow the prompts and we'll get back to you inn a few.<br>
+                           Thanks, Management.
+    
+                        </p>
+                    </section>
 
-                        </li>
-                        <span><img src="call.jpg"></span>
-                        <span>+254790279917</span>
+                    <section>
+                        <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                        <h2>phone</h2>
+                        <p>+254790279917</p>
+                    </section>
 
-                    </ul>
-                    <ul class="sci">
-                        <li><a href="#"><img src="images/facebook.png"></a></li>
-                        <li><a href="#"><img src="images/twitter.png"></a></li>
-                        <li><a href="#"><img src="images/you_tube.png"></a></li>
-                        <li><a href="#"><img src="images/g_plus.png"></a></li>
-
-                    </ul>
+                    <section>
+                        <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                        <h2>E-mail Address</h2>
+                        <p>
+                            faithagnes2@gmail.com
+                        </p>
+                    </section>
                 </div>
-            </div>
-            <div class="contactForm">
-                <h2>Send a message</h2>
-                <div class="formBox">
-                    <div class="inputBox w50">
-                        <input type="text" name="" required>
-                        <span>Your First Name</span>
+            </div> 
+            <form>
+                <div class="form">
+                    <div class="right">
+                        <div class="contact-form">
+                            <input type="text" required>
+                            <span>Enter Your Name</span>
+                        </div>
+                        <div class="contact-form">
+                            <input type="E-mail" required>
+                            <span>Enter Your E-mail</span>
+                        </div>
+
+                        <div class="contact-form">
+                            <textarea name="text"></textarea>
+                            <span>
+                                Enter Your Message...
+                            </span>
+                        </div>
+
+                        <div class="contact-form">
+                            
+                        </div>
                     </div>
-                    <div class="inputBox w50">
-                        <input type="text" name="" required>
-                        <span>Your Last Name</span>
                 </div>
-                <div class="inputBox w50">
-                    <input type="text" name="" required>
-                    <span>Your Email Address</span>
-                </div>
-                <div class="inputBox w50">
-                    <input type="text" name="" required>
-                    <span>Phone Number</span>
-                </div>
-                <!-- <div class="inputBox w50">
-                    <input type="text" name="" required>
-                    <span></span>
-            </div> -->
+            </form>
+
+            </div>  
         </div>
     </body>
 </html>
