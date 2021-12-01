@@ -5,6 +5,7 @@ $(document).ready(function(){
     
 
     var total = 0;
+    var orders = []
 
     $.get('data.js', {vegy: "vegy"}, function(){
         vegy.map((veg)=> (
@@ -48,6 +49,7 @@ $(document).ready(function(){
         vegy.map(veg => {
             if(e.target.value == veg.id){
                 var item = new product(veg.name,  veg.price)
+                orders =[item , ...orders]
                 total = total+veg.price;
 
                 $('#table').append(`
@@ -65,15 +67,52 @@ $(document).ready(function(){
         $(document).on('click', "#btn", function(e) {
            cereals.map(cereal => {
                if(e.target.value == cereal.id){
-
               var item = new product(cereal.name,  cereal.price)
+              orders =[item , ...orders]
                 total = total+cereal.price
-                   console.log(item)
+                   
+                $('#table').append(`
+                <tr>
+                <td>${item.name}</td>
+                 <td>${item.price}</td>
+                </tr>
+                `)
+        
+                $('#total').html(total)
                }
            })
           });
 
-    
+    $("#check-btn").click(function(){
+       if(orders.length == 0){
+           alert("Make an order fisrt")
+       }
+
+       else{
+           var name = prompt("Enter your name please")
+           var address = prompt("Enter your home address please")
+
+           if(name === '' || address === '' || name == null || address == null){
+               alert("Please fill all the fields for convenience delivery")
+           }
+           else{
+            alert(name + " ,Thank you for shopping with us" + "\n" + "Your order has been recieved and ready to be delivered to " + address
+             + "\n" + "Total price:" + total)
+
+                 
+             $('#table').html(`
+             <tr>
+             <td></td>
+              <td</td>
+             </tr>
+             `)
+     
+             $('#total').html(0)
+             orders.length = 0
+           }
+       }
+
+    })
 
 })
 
