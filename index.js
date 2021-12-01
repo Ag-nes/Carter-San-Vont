@@ -124,7 +124,8 @@ $(document).ready(function(){
             orders.map((order, id) => {
                 if(e.target.value == order.id){
                     total = total - order.price
-                    orders.pop(orders.indexOf(id))
+                    var index = orders.indexOf(order);
+                    orders.splice(index, 1)
 
                     $('#table').html(`
                     <tr>
