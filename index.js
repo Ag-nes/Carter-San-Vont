@@ -7,7 +7,39 @@ $(document).ready(function(){
     var total = 0;
     var orders = []
 
-    $.get('data.js', {vegy: "vegy"}, function(){
+    function product(id, name, price){
+        this.id = id;
+        this.name = name;
+        this.price = price;
+    }
+    function placeOrder() {
+        sessionStorage.setItem('order', JSON.stringify(orders));
+        sessionStorage.setItem('total', JSON.stringify(total));
+    }
+
+    function getOrders() {
+        orders = JSON.parse(sessionStorage.getItem('order'));
+        total = JSON.parse(sessionStorage.getItem('total'));
+    }
+
+    
+
+    if (sessionStorage.getItem("order") != null) {
+        getOrders()
+        orders.forEach(order => {
+            $('#table').append(`
+            <tr>
+            <td>${order.name}</td>
+             <td>${order.price}</td>
+             <td><button id="rmv" value=${order.id}>remove</button></td>
+            </tr>
+            `)
+            $('#total').html(total)   
+    });  
+    }
+
+
+    $.get('data.js', [{vegy: "vegy"},{cereals: "cereals"}], function(){
         vegy.map((veg)=> (
           $('.v-products').append(`
           <div class="product">
@@ -20,9 +52,7 @@ $(document).ready(function(){
       </div>
           `)
         ))
-    })
 
-    $.get('data.js', {cereals: "cereals"}, function(){
         cereals.map((cereal)=> (
             $('.c-products').append(`
           <div class="product">
@@ -36,55 +66,87 @@ $(document).ready(function(){
           `)
 
         ))
-
     })
-    function product(name, price){
-        this.name = name;
-        this.price = price;
-    }
 
+   
     $(document).on('click', "#btn", function(e) {
         vegy.map(veg => {
             if(e.target.value == veg.id){
-                var item = new product(veg.name,  veg.price)
-                orders =[item ,...orders]
-                orders =[item , ...orders]
+                var item = new product(veg.id, veg.name,  veg.price)
+                orders.push(item)
                 total = total+veg.price;
+                console.log(orders)
 
-                $('#table').append(`
-                <tr>
-                <td>${item.name}</td>
-                 <td>${item.price}</td>
-                </tr>
-                `)
-        
-                $('#total').html(total)
-        
+                orders.map(order => {
+                    $('#table').append(`
+                    <tr>
+                    <td>${order.name}</td>
+                     <td>${order.price}</td>
+                     <td><button id="rmv" value=${order.id}>remove</button></td>
+                    </tr>
+                    `)
+                    $('#total').html(total)   
+            });  
+                placeOrder()
+                location.reload()
             }
-        })
-       });
 
-        $(document).on('click', "#btn", function(e) {
-           cereals.map(cereal => {
-               if(e.target.value == cereal.id){
-              var item = new product(cereal.name,  cereal.price)
-              orders =[item ,...orders]
+        });
+
+        cereals.map(cereal => {
+            if(e.target.value == cereal.id){
+           var item = new product(cereal.id ,cereal.name,  cereal.price)
+              orders.push(item)
+          
+             total = total+cereal.price
+             orders.map(order=> {
+                 $('#table').append(`
+                 <tr>
+                 <td>${order.name}</td>
+                  <td>${order.price}</td>
+                  <td><button id="rmv" value=${order.id}>remove</button></td>
+                 </tr>
+                 `)
+                 $('#total').html(total)
+                 
+             });
+             placeOrder() 
+             location.reload()
+            }
+        }) 
+    
+     
+    });
+
+
+          $(document).on('click', "#rmv", function(e) {
+
+            orders.map((order, id) => {
+                if(e.target.value == order.id){
+                    total = total - order.price
+                    var index = orders.indexOf(order);
+                    orders.splice(index, 1)
+
+                    $('#table').html(`
+                    <tr>
+                    </tr>
+                    `)
             
-                total = total+cereal.price
-                   
-                $('#table').append(`
-                <tr>
-                <td>${item.name}</td>
-                 <td>${item.price}</td>
-                </tr>
-                `)
-        
-                $('#total').html(total)
-               }
-           })
-          });
+                    $('#total').html(total)
+                     alert(order.price)
+                     alert(id)
+                
+                }
 
-         
+
+                placeOrder()
+                location.reload()
+            })
+
+           });
+
+
+
 
     $("#check-btn").click(function(){
        if(orders.length == 0){
@@ -101,8 +163,6 @@ $(document).ready(function(){
            else{
             alert(name + " ,Thank you for shopping with us" + "\n" + "Your order has been recieved and ready to be delivered to " + address
              + "\n" + "Total price:" + total)
-
-                 
              $('#table').html(`
              <tr>
              <td></td>
@@ -114,10 +174,11 @@ $(document).ready(function(){
              location.reload()
            }
        }
-
     })
 
-})
+
+
+});
 
 
 
