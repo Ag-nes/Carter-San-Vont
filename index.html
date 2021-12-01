@@ -1,76 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale =1.0">
-        <title>Contact Page</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <h2>Evegy</h2>
-            <div class="nav">
-                <a href="">Reviews</a>
-                <a href="">Contact us</a>
-            </div>
-        </header>
-        <section class="contact">
-            <div class="content">
-                <h2>Get In Touch!</h2>
-                <p>We love hearing from you, drop a message and be sure we'll get back to you soon</p>
-            </div>
-            <div class="container">
-                <div class="contactInfo">
-                    <div class="box">
-                            <div class="icon"><img src="images/mall-70x70.jpg"></div>
-                            <div class="text">
-                                <h3>Location</h3>
-                                <p>Thika Road Mall,<br>Nairobi<br>Kenya</p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Vegy</title>
 
-                            </div>
-                    </div> 
-                    <div class="box">
-                            <div class="icon"><img src="images/facebook.png"></div>
-                            <div class="text">
-                                <h3>facebook</h3>
-                                <p>Carter-San publicio</p>
-                            </div>
-                    </div>
-                    <div class="box">
-                            <div class="icon"><img src="images/twitter.png"></div>
-                            <div class="text">
-                                <h3>twitter</h3>
-                                <p>@CarterSan</p>
-                            </div>
-                    </div>
-                </div>
-            </div> 
-            <div class="contactForm">
-                <form>
-                    <h2>Send Message</h2>
-                    <div class="inputBox">
-                        <input type="text" required="required">
-                        <span>Your Name</span>
-                    </div>
-                    <div class="inputBox">
-                        <input type="text" required="required">
-                        <span>Email</span>
-                    </div>
-                    <div class="inputBox">
-                        <textarea name="" id="" required="required"></textarea>
-                        <span>Your Message...</span>
-                    </div>
-                    <div class="inputBox">
-                        <input type="submit" value="Send">
-                    </div>
-                </form>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="nav">
+        <h2 id="logo">Carter-San vont</h2>
+        <ul>
+            <li><a href="/index.html">Products</a></li>
+            <li><a href="/review.html">Reviews</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="hero">
+        <div>
+        <h1>Welcome to Carter-San vont,<br/>
+        The best vegetable and cereals online shop <br/>
+        You buy we deliver</h1>
+        <a href="#main">Order Now</a>
+    </div>
+        <img src="images/background.png" alt="" />
+    </div>
+
+
+    <div id="main">
+
+    <div class="p-main">
+        <div class="vegy-products">
+        <h1>Our <span>Vegetables</span></h1>
+        <div class="v-products">
+        </div>                   
+        </div>
+
+        <div class="cereal-products">
+            <h1>Our <span>Cereals</span></h1>
+            <div class="c-products">
+    
+            </div>                   
             </div>
-        </section>
+     </div>
+
+     <div class="order">
+         <h3>Orders</h3>
+         <table id="table">
+
+          </table>
+          <span id="ttl">Total:</span><span id="total"></span><br/>
+          <button id="check-btn" class="btn btn-warning">Checkout</button>
+     </div>
+    </div>
+
+
+
+
+
+
+    <div class="footer-dark">
         <footer>
-            <h2>&copy; Copyright Reserved.</h2>
-            <p>Carter-San vont</p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Ecommerce</a></li>
+                            <li><a href="#">E-commerce</a></li>
+                            <li><a href="#">Delivery</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>E-Vegy</h3>
+                        <p>This a company that works on providing ecommerce services to the users. Our site mostly specifies in vegetables and cereals products.</p>
+                    </div>
+                    <div class="col item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a></div>
+                </div>
+                <p class="copyright">Carter-San vont © 2021</p>
+            </div>
         </footer>
-            
-    </body>
+    </div>
+
+
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+</body>
 </html>

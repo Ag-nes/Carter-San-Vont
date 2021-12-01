@@ -23,6 +23,7 @@ This is an E-commerce application that allows users to view products,order onlin
   * Add products to cart
   * Make orders
   * Proceed to checkout
+  
 ## Technologies used
   * HTML
   * CSS
