@@ -1,4 +1,5 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 *{
     margin: 0;
 }
@@ -48,8 +49,9 @@
 }
 
 .hero h1{
-    font-size: 50px;
+    font-size: 65px;
     margin-bottom: 40px;
+    font-family: 'Lobster', cursive;
 }
 
 .hero a{
@@ -137,7 +139,7 @@ th, td{
     top: 20%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 500px;
-    width: 250px;
+    width: 350px;
   }
 
   #check-btn{
@@ -156,7 +158,12 @@ th, td{
   }
 
 
-
+  #rmv{
+   color: red;
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+  }
 
 
 
