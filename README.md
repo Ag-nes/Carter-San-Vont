@@ -1,10 +1,10 @@
 # CARTER-SAN-VONT
 
 ## Authors
-Agnes Okutoyi
-Joshua Barawa
-Gideon Mokangaa
-Arfon Idris
+ * Agnes Okutoyi
+ * Joshua Barawa
+* Gideon Mokangaa
+* Arfon Idris
 
 ## Description
 This is an E-commerce application that allows users to view products,order online and also make reviews.
