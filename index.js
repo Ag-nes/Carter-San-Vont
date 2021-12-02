@@ -133,9 +133,6 @@ $(document).ready(function(){
                     `)
             
                     $('#total').html(total)
-                     alert(order.price)
-                     alert(id)
-                
                 }
 
 
