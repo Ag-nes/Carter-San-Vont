@@ -158,7 +158,12 @@ th, td{
   }
 
 
-
+  #rmv{
+   color: red;
+   border: none;
+   background-color: transparent;
+   cursor: pointer;
+  }
 
 
 
